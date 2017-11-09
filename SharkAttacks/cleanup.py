@@ -53,17 +53,9 @@ for i in ages['Age']:
 
 age_bins['Unknown'] = unknownage['Count']
 
-mykeys = list(cats['Count'].keys())
+#hack for categorical data cleanup -- can't automate
+age_bins['Child'] += 1
+age_bins['Teen'] += 7
+age_bins['Young Adult'] += 1
+age_bins['Seniors'] += 1
 
-for c in cats['Count']:
-    if c == 'Teen' or c == 'teen':
-        age_bins['Teen'] += cats[c]
-    elif c  == 'Elderly':
-        age_bins['Seniors'] += c['Count']
-    elif c == 'young':
-        age_bins['Child'] += c['Count']
-    elif c == 'mid-30':
-        age_bins['Adult'] += c['Count']
-#    print(c)
-
-#TODO : Bin the categorical data in cats in ages dict 
